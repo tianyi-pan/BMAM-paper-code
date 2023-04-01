@@ -22,6 +22,7 @@ if(FALSE){
   Tree_brms <- brm(bf(Tree ~ Year + s(Julian_dayF) + s(Julian_dayM) + 
                         (Sex0-1|Beaver)+(Sex1-1|Beaver)),
                    data = beaver2, family = "bernoulli", cores = 4, seed = 17,
+                   save_pars = save_pars(all = TRUE),
                    warmup = 1000, iter = 2000, 
                    chains = 4, backend = "cmdstanr")
   Tree_bmam <- bmam(Tree_brms, centered = T)
@@ -29,6 +30,7 @@ if(FALSE){
   Grass_herb_brms <- brm(bf(Grass_herb ~ Year + s(Julian_dayF) + s(Julian_dayM) + 
                               (Sex0-1|Beaver)+(Sex1-1|Beaver)),
                          data = beaver2, family = "bernoulli", cores = 4, seed = 17,
+                         save_pars = save_pars(all = TRUE),
                          warmup = 1000, iter = 2000, 
                          chains = 4, backend = "cmdstanr")
   Grass_herb_bmam <- bmam(Grass_herb_brms, center = T)
