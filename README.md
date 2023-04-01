@@ -37,4 +37,4 @@ The following script is for running the simulation and summarizing the results.
 + Section 2: beavers_summary.R
 + Section 5.4: application.R
 
-All the results will be saved in the current directory(`pwd` in Linux; `getwd()` in R). The scripts will create directories ./results and ./figures for the complete results and figures.
+All the results will be saved in the current directory(`pwd` in Shell; `getwd()` in R). The scripts will create directories ./results and ./figures for the complete results and figures.
