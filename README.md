@@ -29,7 +29,7 @@ Each part contains three R code files, including 1) a function for the simulatio
 
 The following script is for running the simulation and summarizing the results. 
 + Appendix A:
-    - ---.R
+    - simulation-confounding.R
 
 
 
