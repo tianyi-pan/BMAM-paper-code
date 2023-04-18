@@ -14,7 +14,7 @@ devtools::install_github('tianyi-pan/BMAM')
 ## Simulation
 Each part contains three R code files, including 1) a function for the simulation 2) a script for running, and 3) a script for summarizing the results.
 
-+ Section 3.4 & Section 5.3
++ Section 3.4 & Section 5.3:
     - do_simu_main.R
     - simulation01-main.R
     - summary01-main.R
