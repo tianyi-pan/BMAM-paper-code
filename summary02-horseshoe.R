@@ -73,7 +73,8 @@ estimationtable_indept_linear <- indept_linear %>%
   )
 
 estimationtable_indept_linear$relative <- (estimationtable_indept_linear$sd_flat/estimationtable_indept_linear$sd_horseshoe)^2
-knitr::kable(estimationtable_indept_linear, digit = 2)
+estimationtable_indept_linear$label <- c("c8", "c1","c2", "c3", "c4", "c5", "c6", "c7")
+knitr::kable(arrange(estimationtable_indept_linear,label), digit = 2)
 
 plot_df_indept <- data.frame(label = rep(indept_linear$label,2), 
                              true = rep(indept_linear$true, 2),
@@ -88,12 +89,12 @@ p1 <- p1 + geom_boxplot(width = 0.6, alpha = 0.9) +
   geom_errorbar(aes(ymin = true,ymax = true), width = 0.8, size = 0.8)
 
 p1 <- p1 + theme(text = element_text(size = GGPLOTTEXTSIZE)) + 
-  xlab(TeX('$\\beta$')) + ylab("Estimate") + 
+  xlab(TeX('$\\beta^M$')) + ylab("Estimate") + 
   scale_x_discrete(limits = c("x3","x4","x5","x6","x7","x8","x9","x10"),
-                   labels=c("x3" = TeX('$X_3$'), "x4" = TeX('$X_4$'), 
-                            "x5" = TeX('$X_5$'), "x6" = TeX('$X_6$'), 
-                            "x7" = TeX('$X_7$'), "x8" = TeX('$X_8$'),
-                            "x9" = TeX('$X_9$'), "x10" = TeX('$X_{10}$')))
+                   labels=c("x3" = TeX('$c_1$'), "x4" = TeX('$c_2$'), 
+                            "x5" = TeX('$c_3$'), "x6" = TeX('$c_4$'), 
+                            "x7" = TeX('$c_5$'), "x8" = TeX('$c_6$'),
+                            "x9" = TeX('$c_7$'), "x10" = TeX('$c_8$')))
 p1 <- p1 + ylim(-1, 3.1)
 p1
 ggsave(p1, filename = paste0(filepath,"indept_linear_sparsity4.pdf"), width = PLOTWIDTH, height = PLOTHEIGHT)
@@ -160,7 +161,8 @@ estimationtable_indept_linear <- indept_linear %>%
   )
 
 estimationtable_indept_linear$rel <- (estimationtable_indept_linear$sd_flat/estimationtable_indept_linear$sd_horseshoe)^2
-knitr::kable(estimationtable_indept_linear, digit = 2)
+estimationtable_indept_linear$label <- c("c8", "c1","c2", "c3", "c4", "c5", "c6", "c7")
+knitr::kable(arrange(estimationtable_indept_linear,label), digit = 2)
 
 plot_df_indept <- data.frame(label = rep(indept_linear$label,2), 
                       true = rep(indept_linear$true, 2),
@@ -174,11 +176,12 @@ p1 <- p1 + geom_boxplot(width = 0.6, alpha = 0.9) +
   geom_errorbar(aes(ymin = true,ymax = true), width = 0.8, size = 0.8)
 
 p1 <- p1 + theme(text = element_text(size = GGPLOTTEXTSIZE)) + 
-  xlab(TeX('$\\beta$')) + ylab("Estimate") + 
-  scale_x_discrete(labels=c("x3" = TeX('$X_3$'), "x4" = TeX('$X_4$'), 
-                            "x5" = TeX('$X_5$'), "x6" = TeX('$X_6$'), 
-                            "x7" = TeX('$X_7$'), "x8" = TeX('$X_8$'),
-                            "x9" = TeX('$X_9$'), "x10" = TeX('$X_{10}$')))
+  xlab(TeX('$\\beta^M$')) + ylab("Estimate") + 
+  scale_x_discrete(limits = c("x3","x4","x5","x6","x7","x8","x9","x10"),
+                   labels=c("x3" = TeX('$c_1$'), "x4" = TeX('$c_2$'), 
+                            "x5" = TeX('$c_3$'), "x6" = TeX('$c_4$'), 
+                            "x7" = TeX('$c_5$'), "x8" = TeX('$c_6$'),
+                            "x9" = TeX('$c_7$'), "x10" = TeX('$c_8$')))
 p1 <- p1 + ylim(-1, 3.1)
 p1
 ggsave(p1, filename = paste0(filepath, "indept_linear_sparsity1.pdf"), width = PLOTWIDTH, height = PLOTHEIGHT)
